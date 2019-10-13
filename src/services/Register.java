@@ -1,23 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-/**
- *
- * @author Pasan Mahesha
- */
+
 public class Register extends javax.swing.JFrame {
 
     Connection conn;
@@ -59,20 +52,20 @@ public class Register extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         Back_btn = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jTextField3 = new javax.swing.JTextField();
         Register_btn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -84,14 +77,20 @@ public class Register extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(800, 600));
 
-        jPanel2.setBackground(new java.awt.Color(255, 153, 51));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 204));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 3, true));
+        jPanel2.setEnabled(false);
+        jPanel2.setFocusCycleRoot(true);
+        jPanel2.setFocusable(false);
+        jPanel2.setPreferredSize(new java.awt.Dimension(800, 650));
+        jPanel2.setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setPreferredSize(new java.awt.Dimension(900, 140));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Pasan Mahesha\\Desktop\\RAD\\HONDA.jpg")); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(51, 102, 255));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 3, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 0));
         jLabel1.setText("Welcome to HONDA Service Center");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -99,54 +98,74 @@ public class Register extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(20, 20, 20))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 671, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel12.setText("Current mileage [km]");
+        jPanel2.add(jPanel1);
+        jPanel1.setBounds(68, 49, 670, 110);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Name");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(117, 224, 62, 29);
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Current mileage [km]");
+        jPanel2.add(jLabel12);
+        jLabel12.setBounds(117, 503, 227, 29);
+
+        jLabel8.setBackground(new java.awt.Color(153, 153, 153));
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Vehicle number");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(117, 352, 163, 29);
 
-        Back_btn.setBackground(new java.awt.Color(0, 0, 153));
-        Back_btn.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        Back_btn.setForeground(new java.awt.Color(255, 255, 255));
+        Back_btn.setBackground(new java.awt.Color(102, 102, 102));
+        Back_btn.setFont(new java.awt.Font("Swis721 Hv BT", 3, 18)); // NOI18N
+        Back_btn.setForeground(new java.awt.Color(0, 51, 204));
         Back_btn.setText("clear");
         Back_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Back_btnActionPerformed(evt);
             }
         });
+        jPanel2.add(Back_btn);
+        Back_btn.setBounds(400, 570, 120, 40);
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Last service date");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(117, 422, 181, 29);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("E mail");
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setText("Last service date");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(117, 285, 109, 29);
 
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel2.add(jTextField2);
+        jTextField2.setBounds(386, 282, 374, 35);
 
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel2.add(jTextField4);
+        jTextField4.setBounds(386, 500, 198, 35);
 
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -155,93 +174,35 @@ public class Register extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jPanel2.add(jTextField1);
+        jTextField1.setBounds(386, 218, 374, 35);
 
         jDateChooser1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.add(jDateChooser1);
+        jDateChooser1.setBounds(386, 414, 198, 37);
 
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel2.add(jTextField3);
+        jTextField3.setBounds(386, 352, 198, 35);
 
-        Register_btn.setBackground(new java.awt.Color(0, 0, 153));
-        Register_btn.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        Register_btn.setForeground(new java.awt.Color(255, 255, 255));
+        Register_btn.setBackground(new java.awt.Color(102, 102, 102));
+        Register_btn.setFont(new java.awt.Font("Swis721 Hv BT", 3, 18)); // NOI18N
+        Register_btn.setForeground(new java.awt.Color(0, 51, 255));
         Register_btn.setText("service");
         Register_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Register_btnActionPerformed(evt);
             }
         });
+        jPanel2.add(Register_btn);
+        Register_btn.setBounds(169, 573, 120, 40);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(42, 42, 42)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                                        .addComponent(jTextField2))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))))
-                            .addComponent(jLabel3))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(Register_btn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(222, 222, 222))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Register_btn)
-                    .addComponent(Back_btn))
-                .addGap(68, 68, 68))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\User\\Documents\\NetBeansProjects\\Services\\src\\services\\resources\\bike-background-wallpaper.jpg")); // NOI18N
+        jLabel5.setText("jLabel5");
+        jLabel5.setPreferredSize(new java.awt.Dimension(800, 650));
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(1, 0, 800, 650);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -261,7 +222,6 @@ public class Register extends javax.swing.JFrame {
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
-        //jDateChooser1.setText("");
         jTextField4.setText("");
     }//GEN-LAST:event_Back_btnActionPerformed
 
@@ -273,48 +233,82 @@ public class Register extends javax.swing.JFrame {
     private void Register_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_btnActionPerformed
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        Date d1 = null;
-        Date d2 = new Date();
+        LocalDate d1 = null;
+        LocalDate today = LocalDate.now();
         Random();
         String info[]=new String[5];
         
         try {
-            d1 = format.parse(format.format(jDateChooser1.getDate()));
-            long deff = d2.getDay() - d1.getDay();
+            d1 = LocalDate.parse(format.format(jDateChooser1.getDate()));
+            LocalDate checkdate720 = today.minusDays(720);
+            LocalDate checkdate540 = today.minusDays(540);
+            LocalDate checkdate360 = today.minusDays(360);
+            LocalDate checkdate180 = today.minusDays(180);
+            LocalDate checkdate30 = today.minusDays(30);
 
             String x = jTextField4.getText();
             int y = Integer.parseInt(x);
             
-            if (y >= 20000 || deff > 720) {
+            if (y >= 20000 || d1.isAfter(checkdate720)) {
                 setVisible(false);
-                service_shedule ob = new service_shedule();
-                String a1 = "Service 5";
+                String a1 = jTextField3.getText();
                 String a2 = "5";
                  info[0] = a1;
                  info[1] = a2;
                 // System.out.println(info[0]);
-                service_shedule.main(info);
+                service_shedule ob = new service_shedule(info);
                 ob.setVisible(true);
 
                 //service 5
                 // jTextArea1.setText(rs.getString("serviceA"));
-            } else if (y >= 15000 || deff >= 540) {
+            } else if (y >= 15000 || d1.isAfter(checkdate540)) {
+                setVisible(false);
+                String a1 = jTextField3.getText();
+                String a2 = "4";
+                 info[0] = a1;
+                 info[1] = a2;
+                // System.out.println(info[0]);
+                service_shedule ob = new service_shedule(info);
+                ob.setVisible(true);
                /* setVisible(false);
                 service_schedule1 ob = new service_schedule1();
                 ob.setVisible(true);*/
                 //service 4
                 // jTextArea1.setText(rs.getString("serviceB"));
-            } else if (y >= 10000 || deff >= 360) {
+            } else if (y >= 10000 || d1.isAfter(checkdate360)) {
+                setVisible(false);
+                String a1 = jTextField3.getText();
+                String a2 = "3";
+                 info[0] = a1;
+                 info[1] = a2;
+                // System.out.println(info[0]);
+                service_shedule ob = new service_shedule(info);
+                ob.setVisible(true);
                 //service 3                // jTextArea1.setText(rs.getString("serviceC"));
-            } else if (y >= 5000 || deff >= 180) {
+            } else if (y >= 5000 || d1.isAfter(checkdate180)) {
+                setVisible(false);
+                String a1 = jTextField3.getText();
+                String a2 = "2";
+                 info[0] = a1;
+                 info[1] = a2;
+                service_shedule ob = new service_shedule(info);
+                // System.out.println(info[0]);
+                ob.setVisible(true);
                 //Service 2
                 // jTextArea1.setText(rs.getString("serviceD"));
-            } else if (y >= 1000 || deff >= 30) {
+            } else if (y >= 1000 ||d1.isAfter(checkdate30)) {
+                setVisible(false);
+                String a1 = jTextField3.getText();
+                String a2 = "1";
+                 info[0] = a1;
+                 info[1] = a2;
+                 
+                service_shedule ob = new service_shedule(info);
+                ob.setVisible(true);
                 //Service 1
                 // jTextArea1.setText(rs.getString("serviceE"));
             } else {
-                //no need a service
-                // jTextArea1.setText("No need a service yet");
+               JOptionPane.showMessageDialog(this,"No need a service see you in next time");
             }
             
             
@@ -327,14 +321,6 @@ public class Register extends javax.swing.JFrame {
             pst.setString(4, jTextField3.getText());
 
             pst.execute();
-
-            
-
-            
-
-            //rs.close();
-            //pst.close();
-            // clearall();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         } finally {
@@ -347,22 +333,6 @@ public class Register extends javax.swing.JFrame {
 
             }
         }
-        /*    try{
-            String sql="Insert into users(user_id,name,email,vno)Values(?,?,?,?)";
-            pst=conn.prepareStatement(sql);
-            pst.setString(1,"55315");
-            pst.setString(2,jTextField2.getText());
-            pst.setString(3,jTextField3.getText());
-            pst.setString(4,jTextField1.getText());
-
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "New Account Created");
-            rs.close();
-            pst.close();
-            clearall();
-        }catch(Exception e){
-
-        }*/
     }//GEN-LAST:event_Register_btnActionPerformed
 
     /**
@@ -407,8 +377,8 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JList<String> jList1;

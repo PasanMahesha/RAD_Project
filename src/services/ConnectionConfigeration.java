@@ -9,11 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Pasan Mahesha
- */
- //Connection conn = null;
+
 public class ConnectionConfigeration {
     //Connection conn = null;
     public static Connection getConnection(){
@@ -21,7 +17,8 @@ public class ConnectionConfigeration {
        
     try{
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/services","root","");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/maintain","root","");
+        //JOptionPane.showMessageDialog(null,"Success");
         return conn;
     }catch(Exception e){
         JOptionPane.showMessageDialog(null, e);
